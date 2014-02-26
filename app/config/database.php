@@ -54,7 +54,7 @@ return array(
 
 
         //Toggle between music directory and dvd directory
-		/*'mysql' => array(
+		'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'itp460.usc.edu',
             'database'  => 'music',
@@ -63,9 +63,9 @@ return array(
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ),*/
+        ),
 
-        'mysql' => array(
+        /*'mysql' => array(
             'driver'    => 'mysql',
             'host'      => 'itp460.usc.edu',
             'database'  => 'dvd',
@@ -74,7 +74,7 @@ return array(
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ),
+        ),*/
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',

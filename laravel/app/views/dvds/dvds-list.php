@@ -7,6 +7,9 @@
         body {
             text-align: center;
         }
+        table {
+            margin: auto;
+        }
         td {
             border: 1px solid black;
             margin: 5px;
@@ -49,7 +52,7 @@
                 </h4>
             </td>
             <td><?php echo $dvd->rating_name; ?></td>
-            <td><?php echo $dvd->genre_name; ?></td>
+            <td><a href="/genres/<?php echo $dvd->genre_id; ?>/dvds"><?php echo $dvd->genre_name; ?></a></td>
             <td><?php echo $dvd->label_name; ?></td>
             <td><?php echo $dvd->sound_name; ?></td>
             <td><?php echo $dvd->format_name; ?></td>

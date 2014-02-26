@@ -6,15 +6,48 @@
  * Time: 6:17 PM
  */
 
-class Dvd {
-    public static function search($dvd_title,$genre, $rating) {
+class Dvd extends Eloquent {
+
+    public static function validate($input) {
+        return Validator::make($input, [
+            'title' => 'required|min:3|alpha_num',
+            'format' => 'required|numeric',
+            'label' => 'required|numeric',
+            'sound' => 'required|numeric',
+            'genre' => 'required|numeric',
+            'rating' => 'required|numeric'
+        ]);
+    }
+
+    public function rating() {
+        return $this->belongsTo('Rating');
+    }
+
+    public function sound() {
+        return $this->belongsTo('Sound');
+    }
+
+    public function genre() {
+        return $this->belongsTo('Genre');
+    }
+
+    public function label() {
+        return $this->belongsTo('Label');
+    }
+
+    public function format() {
+        return $this->belongsTo('Format');
+    }
+
+
+    /*public static function search($dvd_title,$genre, $rating) {
         /**
          * SELECT * FROM songs
          * INNER JOIN artists
          * ON songs.artist_id = artists.id
          * INNER JOIN genres
          * ON songs.genre_id = genres.id
-         */
+
 
         $query = DB::table('dvds')
             ->select('title', 'rating_name', 'genre_name', 'label_name', 'sound_name', 'format_name', DB::raw("DATE_FORMAT(release_date, '%b %d %Y %h:%i %p') AS release_date"))
@@ -62,5 +95,5 @@ class Dvd {
             ->distinct()->get();
 
         return $query;
-    }
+    }*/
 }

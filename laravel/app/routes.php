@@ -21,3 +21,8 @@ Route::get('/songs', 'SongController@listSongs');
 
 Route::get('dvds/search', 'DvdController@search');
 Route::get('/dvds', 'DvdController@listDvds');
+
+Route::get('dvds/create', 'DvdController@createForm');
+Route::post('dvds', 'DvdController@create');
+
+Route::get('genres/{id}/dvds', 'DvdController@findGenre');
