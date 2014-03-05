@@ -21,7 +21,7 @@
     Label:
     <select name="label">
         <?php foreach ($labels as $label) : ?>
-            <option value="<?php echo $label->id ?>">
+            <option value="<?php echo $label->id ?>" <?php if(Input::old('label') == $label->id) echo 'selected'?> >
                 <?php echo $label->label_name ?>
             </option>
         <?php endforeach; ?>
@@ -32,7 +32,7 @@
     Sound:
     <select name="sound">
         <?php foreach ($sounds as $sound) : ?>
-            <option value="<?php echo $sound->id ?>">
+            <option value="<?php echo $sound->id ?>" <?php if(Input::old('sound') == $sound->id) echo 'selected'?> >
                 <?php echo $sound->sound_name ?>
             </option>
         <?php endforeach; ?>
@@ -43,7 +43,7 @@
     Genre:
     <select name="genre">
         <?php foreach ($genres as $genre) : ?>
-            <option value="<?php echo $genre->id ?>">
+            <option value="<?php echo $genre->id ?>" <?php if(Input::old('genre') == $genre->id) echo 'selected'?> >
                 <?php echo $genre->genre_name ?>
             </option>
         <?php endforeach ?>
@@ -54,7 +54,7 @@
     Rating:
     <select name="rating">
         <?php foreach ($ratings as $rating) : ?>
-            <option value="<?php echo $rating->id ?>">
+            <option value="<?php echo $rating->id ?>" <?php if(Input::old('rating') == $rating->id) echo 'selected'?> >
                 <?php echo $rating->rating_name ?>
             </option>
         <?php endforeach; ?>
@@ -65,7 +65,7 @@
     Format:
     <select name="format">
         <?php foreach ($formats as $format) : ?>
-            <option value="<?php echo $format->id ?>">
+            <option value="<?php echo $format->id ?>" <?php if(Input::old('format') == $format->id) echo 'selected'?>>
                 <?php echo $format->format_name ?>
             </option>
         <?php endforeach; ?>

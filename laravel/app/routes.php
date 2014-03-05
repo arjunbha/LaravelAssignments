@@ -26,3 +26,16 @@ Route::get('dvds/create', 'DvdController@createForm');
 Route::post('dvds', 'DvdController@create');
 
 Route::get('genres/{id}/dvds', 'DvdController@findGenre');
+
+Route::get('weather/search', function() {
+    return View::make('weather-search');
+});
+
+Route::post('weather/results', function() {
+    $weather = new \Itp\Api\WeatherSearch();
+    $json = $weather->getResults(Input::get('location'));
+
+    return View::make('weather-results', [
+        'data' => $json
+    ]);
+});
